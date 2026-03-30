@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppMinhasComprasJC.Views.NovoProduto"
-             Title="NovoProduto">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage 
+    x:Class="MauiAppMinhasComprasJC.Views.NovoProduto"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Novo Produto">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Descrição" />
+            <Entry x:Name="txt_descricao" Placeholder="Ex: Arroz 5kg" />
+
+            <Label Text="Quantidade" />
+            <Entry x:Name="txt_quantidade" Keyboard="Numeric" Placeholder="Ex: 2" />
+
+            <Label Text="Preço" />
+            <Entry x:Name="txt_preco" Keyboard="Numeric" Placeholder="Ex: 10,50" />
+
+            <Label Text="Categoria" />
+            <Picker x:Name="picker_categoria">
+                <Picker.Items>
+                    <x:String>Alimentos</x:String>
+                    <x:String>Higiene</x:String>
+                    <x:String>Limpeza</x:String>
+                    <x:String>Outros</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button 
+                Text="Salvar"
+                x:Name="btn_salvar"
+                Clicked="btn_salvar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
